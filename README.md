@@ -12,7 +12,7 @@ GET <BACKEND_HOST>/api/v1/leaderboard/event          # normal load (may be cache
 GET <BACKEND_HOST>/api/v1/leaderboard/event?force=true   # Refresh button (bypass cache)
 ```
 
-Default host is **production** (`https://karmacoin-backend-productionn.onrender.com`).
+Default host is the leaderboard service (`https://leaderboard-iud8.onrender.com`).
 Override without editing the file by appending `?api=` to the page URL, e.g.
 
 ```

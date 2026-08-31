@@ -196,7 +196,7 @@
   "use strict";
   // ── Config ──────────────────────────────────────────────
   var API_BASE = new URLSearchParams(location.search).get("api")
-    || "https://karmacoin-backend-productionn.onrender.com";
+    || "https://leaderboard-iud8.onrender.com";
   var ENDPOINT = API_BASE.replace(/\/$/, "") + "/api/v1/leaderboard/event";
   var AUTO_REFRESH_MS = 60000;
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
