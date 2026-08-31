@@ -149,15 +149,15 @@
       <!-- Empty -->
       <div id="empty" class="state" hidden>
         <div class="big">🌱</div>
-        <div class="msg">Abhi tak koi ranking nahi.</div>
-        <div class="hint">Jaise hi log coins kamana shuru karenge, top 10 yahan aa jayenge.</div>
+        <div class="msg">No rankings yet.</div>
+        <div class="hint">As soon as people start earning coins, the top 10 will appear here.</div>
       </div>
 
       <!-- Error -->
       <div id="error" class="state" hidden>
         <div class="big">⚠️</div>
-        <div class="msg">Leaderboard load nahi ho paya.</div>
-        <div class="hint" id="errorHint">Apna connection check karke dobara try karein.</div>
+        <div class="msg">Couldn't load the leaderboard.</div>
+        <div class="hint" id="errorHint">Check your connection and try again.</div>
         <button class="refresh retry" id="retryBtn" type="button">Retry</button>
       </div>
     </main>
@@ -259,8 +259,8 @@
         // Only surface a hard error when we have nothing on screen already.
         if (contentEl.hidden && emptyEl.hidden) {
           errorHint.textContent = (err && err.message)
-            ? "Details: " + err.message + ". Dobara try karein."
-            : "Apna connection check karke dobara try karein.";
+            ? "Details: " + err.message + ". Please try again."
+            : "Check your connection and try again.";
           show("error");
         }
       })
