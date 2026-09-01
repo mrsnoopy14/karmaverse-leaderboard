@@ -1,0 +1,14 @@
+# Render Blueprint — static leaderboard site.
+# Render dashboard → New → Blueprint → connect this repo, or create a
+# Static Site manually (Publish directory: ., no build command).
+services:
+  - type: web
+    name: karmaverse-leaderboard
+    runtime: static
+    buildCommand: "echo no build step needed"
+    staticPublishPath: .
+    # Serve fresh HTML every time — avoids stale-cache issues.
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-store
