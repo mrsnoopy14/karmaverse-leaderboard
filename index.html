@@ -201,22 +201,6 @@
   var AUTO_REFRESH_MS = 60000;
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Demo mode: open the page with ?mock=1 to show a full sample leaderboard
-  // (no backend needed) — handy before real event data starts flowing.
-  var MOCK_MODE = new URLSearchParams(location.search).get("mock") === "1";
-  var MOCK_DATA = [
-    { rank:1,  name:"Gunjan Dua",     coins:1280 },
-    { rank:2,  name:"Balwant Singh",  coins:1140 },
-    { rank:3,  name:"Aarav Sharma",   coins:980  },
-    { rank:4,  name:"Priya Nair",     coins:870  },
-    { rank:5,  name:"Rohan Verma",    coins:760  },
-    { rank:6,  name:"Sneha Iyer",     coins:690  },
-    { rank:7,  name:"Karan Mehta",    coins:540  },
-    { rank:8,  name:"Ananya Gupta",   coins:430  },
-    { rank:9,  name:"Vikram Rao",     coins:350  },
-    { rank:10, name:"Neha Kapoor",    coins:290  }
-  ];
-
   var el = function (id) { return document.getElementById(id); };
   var loadingEl=el("loading"), contentEl=el("content"), emptyEl=el("empty"), errorEl=el("error"),
       championEl=el("champion"), podiumEl=el("podium"), listEl=el("list"),
@@ -291,7 +275,6 @@
 
   function load(opts){
     opts=opts||{};
-    if(MOCK_MODE){ mainEl.classList.remove("go"); render(MOCK_DATA); setUpdatedNow(); return; }
     if(isFetching)return; isFetching=true;
     if(opts.force){refreshBtn.classList.add("loading");refreshBtn.disabled=true;}
     if(opts.initial)show("loading");
